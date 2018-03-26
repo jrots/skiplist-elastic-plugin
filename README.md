@@ -10,7 +10,12 @@ This plugin is 10 times faster when doing a simple search on a set of 30K docume
 
 The data field needs to contain a base64 encode representation of the skiplist, 
 
-## Sample call : 
+##Installation
+(Only tested with elastic 6.2.2)
+```
+sudo bin/elasticsearch-plugin install https://github.com/jrots/skiplist-elastic-plugin/blob/master/build/distributions/skiplist-plugin-6.2.2-SNAPSHOT.zip?raw=true
+```
+## Usage, sample call : 
 ```
 ....
 curl -XGET 'localhost:9200/_search?pretty' -H 'Content-Type: application/json' -d'
