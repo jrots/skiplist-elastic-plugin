@@ -194,7 +194,8 @@ public class SkipListPlugin extends Plugin implements ScriptPlugin {
                                                 return skipScore;
                                             }
                                             // only check values that exist.
-                                            long storedValue = ((ScriptDocValues.Longs) getLeafLookup().doc().get(additionalField)).getValue();
+                                            long storedValue = ((ScriptDocValues.Dates) getLeafLookup().doc().get(additionalField)).get(0).getMillis();
+
                                             if (additionalFieldComparator.equals("<")) {
                                                 if (storedValue < additionalFieldValue) {
                                                     return skipScore;
@@ -209,6 +210,7 @@ public class SkipListPlugin extends Plugin implements ScriptPlugin {
                                         }
                                     }
                                 } catch(Exception e) {
+                                   // System.out.println(e);
                                    return getScore();
                                 }
                                 return getScore();
