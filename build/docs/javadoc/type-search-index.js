@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"org.elasticsearch.jrots.skiplist","l":"SkipListPlugin"}]

@@ -1,0 +1,40 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2018-03-26T18:15:58+02:00
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 3
+
+Apache Licensed: 3
+Generated Documents: 0
+
+JavaDocs are generated and so license header is optional
+Generated files do not required license headers
+
+0 Unknown Licenses
+
+*******************************
+
+Unapproved licenses:
+
+
+*******************************
+
+Archives:
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require AL headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc will be marked N
+  AL    /Users/jayme/Documents/git/elastic/elasticsearch/plugins/jrots/src/main/java/org/elasticsearch/jrots/skiplist/ByteBufferBackedInputStream.java
+  AL    /Users/jayme/Documents/git/elastic/elasticsearch/plugins/jrots/src/main/java/org/elasticsearch/jrots/skiplist/SkipListPlugin.java
+  AL    /Users/jayme/Documents/git/elastic/elasticsearch/plugins/jrots/src/test/java/org/elasticsearch/twoo/skiplist/SkipListClientYamlTestSuiteIT.java
+ 
+*****************************************************
+ Printing headers for files without AL header...
+ 
+ 

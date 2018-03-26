@@ -1,0 +1,1 @@
+"/Users/jayme/Documents/git/elastic/elasticsearch/plugins/jrots/build/cluster/integTestCluster node0/elasticsearch-6.2.2-SNAPSHOT/bin/elasticsearch" "$@" > run.log 2>&1 ; if [ $? != 0 ]; then touch run.failed; fi

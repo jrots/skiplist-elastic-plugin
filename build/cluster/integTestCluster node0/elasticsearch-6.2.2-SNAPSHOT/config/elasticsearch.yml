@@ -1,0 +1,13 @@
+cluster.name: plugins_jrots_integTestCluster
+node.name: node-0
+pidfile: /Users/jayme/Documents/git/elastic/elasticsearch/plugins/jrots/build/cluster/integTestCluster node0/es.pid
+path.repo: /Users/jayme/Documents/git/elastic/elasticsearch/plugins/jrots/build/cluster/shared/repo
+path.shared_data: /Users/jayme/Documents/git/elastic/elasticsearch/plugins/jrots/build/cluster/shared/
+node.attr.testattr: test
+node.max_local_storage_nodes: 1
+http.port: 0
+transport.tcp.port: 0
+cluster.routing.allocation.disk.watermark.low: 1b
+cluster.routing.allocation.disk.watermark.high: 1b
+cluster.routing.allocation.disk.watermark.flood_stage: 1b
+script.max_compilations_rate: 2048/1m

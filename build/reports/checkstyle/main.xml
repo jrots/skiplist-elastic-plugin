@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="7.5">
+<file name="/Users/jayme/Documents/git/elastic/elasticsearch/plugins/jrots/src/main/java/org/elasticsearch/jrots/skiplist/ByteBufferBackedInputStream.java">
+</file>
+<file name="/Users/jayme/Documents/git/elastic/elasticsearch/plugins/jrots/src/main/java/org/elasticsearch/jrots/skiplist/SkipListPlugin.java">
+</file>
+</checkstyle>

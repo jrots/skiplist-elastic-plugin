@@ -26,9 +26,6 @@ import java.util.Map;
 import java.util.Base64;
 
 import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
-
-import java.io.InputStream;
 import java.io.DataInputStream;
 
 import org.apache.lucene.index.LeafReaderContext;
@@ -43,54 +40,6 @@ import org.elasticsearch.script.SearchScript;
 import org.elasticsearch.index.fielddata.ScriptDocValues;
 
 import org.roaringbitmap.RoaringBitmap;
-
-class ByteBufferBackedInputStream extends InputStream {
-
-    ByteBuffer buf;
-
-    ByteBufferBackedInputStream(ByteBuffer buf) {
-        this.buf = buf;
-    }
-
-    @Override
-    public int available() throws IOException {
-        return buf.remaining();
-    }
-
-    @Override
-    public boolean markSupported() {
-        return false;
-    }
-
-    @Override
-    public int read() throws IOException {
-        if (!buf.hasRemaining()) {
-            return -1;
-        }
-        return 0xFF & buf.get();
-    }
-
-    @Override
-    public int read(byte[] bytes) throws IOException {
-        int len = Math.min(bytes.length, buf.remaining());
-        buf.get(bytes, 0, len);
-        return len;
-    }
-
-    @Override
-    public int read(byte[] bytes, int off, int len) throws IOException {
-        len = Math.min(len, buf.remaining());
-        buf.get(bytes, off, len);
-        return len;
-    }
-
-    @Override
-    public long skip(long n) {
-        int len = Math.min((int) n, buf.remaining());
-        buf.position(buf.position() + (int) n);
-        return len;
-    }
-}
 
 /**
  * An example script plugin that adds a {@link ScriptEngine} implementing expert scoring.
@@ -194,7 +143,10 @@ public class SkipListPlugin extends Plugin implements ScriptPlugin {
                                                 return skipScore;
                                             }
                                             // only check values that exist.
-                                            long storedValue = ((ScriptDocValues.Dates) getLeafLookup().doc().get(additionalField)).get(0).getMillis();
+                                            long storedValue = (
+                                                        (ScriptDocValues.Dates) getLeafLookup().doc()
+                                                        .get(additionalField)
+                                                    ).get(0).getMillis();
 
                                             if (additionalFieldComparator.equals("<")) {
                                                 if (storedValue < additionalFieldValue) {
