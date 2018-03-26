@@ -139,7 +139,11 @@ public class SkipListPlugin extends Plugin implements ScriptPlugin {
 
                                     if (bitmap_c.contains(documentId)) {
                                         if (additionalFieldCheck) {
-                                            if (!getLeafLookup().doc().containsKey(additionalField)) {
+
+                                            if (!(getLeafLookup().doc().containsKey(additionalField))) {
+                                                return skipScore;
+                                            }
+                                            if (((ScriptDocValues.Dates) getLeafLookup().doc().get(additionalField)).size() == 0) {
                                                 return skipScore;
                                             }
                                             // only check values that exist.
@@ -162,7 +166,6 @@ public class SkipListPlugin extends Plugin implements ScriptPlugin {
                                         }
                                     }
                                 } catch(Exception e) {
-                                   // System.out.println(e);
                                    return getScore();
                                 }
                                 return getScore();
